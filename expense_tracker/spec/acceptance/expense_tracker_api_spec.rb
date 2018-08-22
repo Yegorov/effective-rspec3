@@ -1,12 +1,9 @@
-require 'rack/test'
 require 'json'
 
 require_relative '../../app/api'
 
 module ExpenseTracker
   RSpec.describe 'Expense Tracker API' do
-    include Rack::Test::Methods
-
     it 'records submitted expenses' do
       pending 'Need to persist expenses'
       coffee = post_expense({
