@@ -8,4 +8,6 @@ bundle install
 bundle exec rspec --init
 bundle exec rspec
 bundle exec rackup
+
+bundle exec rspec --backtrace
 ```
