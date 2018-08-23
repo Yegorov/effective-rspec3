@@ -63,8 +63,8 @@ module ExpenseTracker
       let(:date) { '2017-06-10' }
       context 'when expenses exist on the give date' do
         before do
-          allow(ledger).to receive(:expense_on)
-            .with(:date)
+          allow(ledger).to receive(:expenses_on)
+            .with(date)
             .and_return({ 'some' => 'data' })
         end
         it 'returns the expense records as JSON' do
@@ -80,7 +80,7 @@ module ExpenseTracker
 
       context 'when there are no expenses on the given date' do
         before do
-          allow(ledger).to receive(:expense_on)
+          allow(ledger).to receive(:expenses_on)
             .with(date)
             .and_return([])
         end
