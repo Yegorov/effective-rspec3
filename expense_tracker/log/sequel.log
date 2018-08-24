@@ -57,3 +57,61 @@ I, [2018-08-24T12:09:28.835152 #11449]  INFO -- : (0.000019s) BEGIN
 I, [2018-08-24T12:09:28.835434 #11449]  INFO -- : (0.000063s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
 I, [2018-08-24T12:09:28.835537 #11449]  INFO -- : (0.000020s) ROLLBACK
 I, [2018-08-24T12:09:28.835581 #11449]  INFO -- : End example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.693188 #12849]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2018-08-24T12:47:23.693303 #12849]  INFO -- : (0.000023s) PRAGMA case_sensitive_like = 1
+I, [2018-08-24T12:47:23.693486 #12849]  INFO -- : (0.000112s) SELECT sqlite_version()
+I, [2018-08-24T12:47:23.693695 #12849]  INFO -- : (0.000036s) CREATE TABLE IF NOT EXISTS `schema_info` (`version` integer DEFAULT (0) NOT NULL)
+I, [2018-08-24T12:47:23.693887 #12849]  INFO -- : (0.000082s) SELECT * FROM `schema_info` LIMIT 1
+I, [2018-08-24T12:47:23.694118 #12849]  INFO -- : (0.000065s) SELECT 1 AS 'one' FROM `schema_info` LIMIT 1
+I, [2018-08-24T12:47:23.694312 #12849]  INFO -- : (0.000060s) SELECT count(*) AS 'count' FROM `schema_info` LIMIT 1
+I, [2018-08-24T12:47:23.694493 #12849]  INFO -- : (0.000063s) SELECT `version` FROM `schema_info` LIMIT 1
+I, [2018-08-24T12:47:23.758496 #12849]  INFO -- : (0.063864s) DELETE FROM `expenses`
+I, [2018-08-24T12:47:23.758853 #12849]  INFO -- : Start example: records submitted expenses
+I, [2018-08-24T12:47:23.758975 #12849]  INFO -- : (0.000042s) BEGIN
+I, [2018-08-24T12:47:23.771344 #12849]  INFO -- : (0.000181s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2018-08-24T12:47:23.771624 #12849]  INFO -- : (0.000082s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.776060 #12849]  INFO -- : (0.000066s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Zoo', 15.25, '2017-06-10')
+I, [2018-08-24T12:47:23.776310 #12849]  INFO -- : (0.000079s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.776818 #12849]  INFO -- : (0.000036s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Whole Foods', 95.2, '2017-06-11')
+I, [2018-08-24T12:47:23.776981 #12849]  INFO -- : (0.000052s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.777888 #12849]  INFO -- : (0.000339s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2018-08-24T12:47:23.779490 #12849]  INFO -- : (0.000103s) ROLLBACK
+I, [2018-08-24T12:47:23.779558 #12849]  INFO -- : End example: records submitted expenses
+I, [2018-08-24T12:47:23.792580 #12849]  INFO -- : Start example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.792747 #12849]  INFO -- : (0.000040s) BEGIN
+I, [2018-08-24T12:47:23.794157 #12849]  INFO -- : (0.000126s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.794341 #12849]  INFO -- : (0.000026s) ROLLBACK
+I, [2018-08-24T12:47:23.794403 #12849]  INFO -- : End example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.794703 #12849]  INFO -- : Start example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.794794 #12849]  INFO -- : (0.000020s) BEGIN
+I, [2018-08-24T12:47:23.795062 #12849]  INFO -- : (0.000063s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.795168 #12849]  INFO -- : (0.000020s) ROLLBACK
+I, [2018-08-24T12:47:23.795238 #12849]  INFO -- : End example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.795472 #12849]  INFO -- : Start example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.795558 #12849]  INFO -- : (0.000019s) BEGIN
+I, [2018-08-24T12:47:23.795805 #12849]  INFO -- : (0.000057s) SELECT count(*) AS 'count' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.795920 #12849]  INFO -- : (0.000020s) ROLLBACK
+I, [2018-08-24T12:47:23.795974 #12849]  INFO -- : End example: rejects the expense as invalid
+I, [2018-08-24T12:47:23.796204 #12849]  INFO -- : Start example: successfully saves the expense in the DB
+I, [2018-08-24T12:47:23.796286 #12849]  INFO -- : (0.000018s) BEGIN
+I, [2018-08-24T12:47:23.796579 #12849]  INFO -- : (0.000144s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2018-08-24T12:47:23.796791 #12849]  INFO -- : (0.000083s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:23.796984 #12849]  INFO -- : (0.000094s) SELECT * FROM `expenses`
+I, [2018-08-24T12:47:24.166661 #12849]  INFO -- : (0.000139s) ROLLBACK
+I, [2018-08-24T12:47:24.166780 #12849]  INFO -- : End example: successfully saves the expense in the DB
+I, [2018-08-24T12:47:24.167254 #12849]  INFO -- : Start example: returns a blank array when there are no matching expenses
+I, [2018-08-24T12:47:24.167361 #12849]  INFO -- : (0.000024s) BEGIN
+I, [2018-08-24T12:47:24.167690 #12849]  INFO -- : (0.000121s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2018-08-24T12:47:24.167824 #12849]  INFO -- : (0.000023s) ROLLBACK
+I, [2018-08-24T12:47:24.167881 #12849]  INFO -- : End example: returns a blank array when there are no matching expenses
+I, [2018-08-24T12:47:24.168096 #12849]  INFO -- : Start example: returns all expenses for the provided date
+I, [2018-08-24T12:47:24.168182 #12849]  INFO -- : (0.000019s) BEGIN
+I, [2018-08-24T12:47:24.168495 #12849]  INFO -- : (0.000142s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2018-08-24T12:47:24.168748 #12849]  INFO -- : (0.000072s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:24.168894 #12849]  INFO -- : (0.000033s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-10')
+I, [2018-08-24T12:47:24.169073 #12849]  INFO -- : (0.000055s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:24.169226 #12849]  INFO -- : (0.000031s) INSERT INTO `expenses` (`payee`, `amount`, `date`) VALUES ('Starbucks', 5.75, '2017-06-11')
+I, [2018-08-24T12:47:24.169396 #12849]  INFO -- : (0.000053s) SELECT max(`id`) AS 'max' FROM `expenses` LIMIT 1
+I, [2018-08-24T12:47:24.169641 #12849]  INFO -- : (0.000139s) SELECT * FROM `expenses` WHERE (`date` = '2017-06-10')
+I, [2018-08-24T12:47:24.169932 #12849]  INFO -- : (0.000078s) ROLLBACK
+I, [2018-08-24T12:47:24.169989 #12849]  INFO -- : End example: returns all expenses for the provided date
