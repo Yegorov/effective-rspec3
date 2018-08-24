@@ -1,4 +1,12 @@
-example_id              | status | run_time        |
------------------------ | ------ | --------------- |
-./spec/tea_spec.rb[1:1] | passed | 0.00047 seconds |
-./spec/tea_spec.rb[1:2] | passed | 0.001 seconds   |
+example_id                        | status | run_time        |
+--------------------------------- | ------ | --------------- |
+./spec/addressable_spec.rb[1:1]   | passed | 0.00046 seconds |
+./spec/addressable_spec.rb[1:2:1] | passed | 0.0001 seconds  |
+./spec/addressable_spec.rb[1:2:2] | passed | 0.00011 seconds |
+./spec/addressable_spec.rb[1:3]   | passed | 0.00012 seconds |
+./spec/tea_spec.rb[1:1]           | passed | 0.00043 seconds |
+./spec/tea_spec.rb[1:2]           | passed | 0.00102 seconds |
+./spec/uri_spec.rb[1:1:1]         | passed | 0.00007 seconds |
+./spec/uri_spec.rb[1:1:2]         | passed | 0.00007 seconds |
+./spec/uri_spec.rb[1:2]           | passed | 0.0001 seconds  |
+./spec/uri_spec.rb[1:3]           | passed | 0.00008 seconds |

@@ -108,3 +108,13 @@ RSpec.configure do |config|
     require_relative 'support/db'
   end
 end
+
+RSpec.configure do |c|
+  c.alias_example_group_to :pdescribe, pry: true
+  c.alias_example_to :pit, pry: true
+
+  c.after(:example, pry: true) do |ex|
+    require 'pry'
+    binding.pry
+  end
+end
