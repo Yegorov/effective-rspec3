@@ -124,3 +124,14 @@ RSpec.configure do |c|
     DB.log_info("End example: #{example.metadata[:description]}")
   end
 end
+
+
+module ExpenseTrackerMatchers
+  def an_expense_identified_by(id)
+    a_hash_including(id: id).and including(:payee, :amount, :date)
+  end
+end
+
+RSpec.configure do |c|
+  c.include ExpenseTrackerMatchers
+end
